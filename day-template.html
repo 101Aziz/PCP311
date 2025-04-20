@@ -1,0 +1,74 @@
+<!-- TEMPLATE FOR ADDING NEW DAY CONTENT -->
+
+<!-- Step 1: Add the title to the getDayTitle function -->
+function getDayTitle(day) {
+    const titles = {
+        3: "Airway Management",
+        4: "Patient Assessment",
+        5: "Trauma Management",
+        // Add your new day here, example:
+        6: "Your New Day Title"
+        // Continue adding more days as needed
+    };
+    
+    return titles[day] || "Coming Soon";
+}
+
+<!-- Step 2: Add the content to the getDayContent function -->
+function getDayContent(day) {
+    if (day === 3) {
+        // Existing Day 3 content
+    } 
+    // Add your new day content here, example for Day 6:
+    else if (day === 6) {
+        return `
+            <h3>Your New Day Title</h3>
+            <p>My Personal Notes – Day 6 of PCP Skills Training</p>
+            <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 0.5rem; margin-bottom: 1rem; font-size: 0.9rem;">
+                <strong>Note:</strong> These are my personal learning notes and may not be complete or error-free. Always verify with official sources.
+            </div>
+            
+            <div class="key-point">
+                <h4>1. First Key Point Title</h4>
+                <ul>
+                    <li>First bullet point with important information.</li>
+                    <li>Second bullet point with additional details.</li>
+                    <li>Third bullet point explaining a critical concept.</li>
+                </ul>
+            </div>
+            
+            <div class="key-point">
+                <h4>2. Second Key Point Title</h4>
+                <ul>
+                    <li>Important information about this concept.</li>
+                    <li>Additional details and guidance.</li>
+                </ul>
+            </div>
+            
+            <div class="key-point">
+                <h4>3. Third Key Point Title</h4>
+                <ul>
+                    <li>First bullet point with important information.</li>
+                    <li>Second bullet point with details:
+                        <ul>
+                            <li>Sub-bullet with specific information.</li>
+                            <li>Another sub-bullet with more details.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Continue adding more key points as needed -->
+        `;
+    } 
+    else {
+        // Default "coming soon" message for days without content yet
+        return `
+            <h3>Content for Day ${day}</h3>
+            <p>This content is coming soon. Check back on or after this day for the full lesson summary!</p>
+        `;
+    }
+}
+
+<!-- Step 3: Update the currentDay variable when you add new content -->
+const currentDay = 6; // Change this to your latest day number
